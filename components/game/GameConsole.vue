@@ -12,7 +12,7 @@
 import { computed, defineComponent, inject, Ref } from '@nuxtjs/composition-api'
 export default defineComponent({
   setup() {
-    const consoleStore = inject('consoleStore')
+    const consoleStore = inject('consoleStore') as any
     const consoleCommands: Ref<Array<string>> = consoleStore.commands
     const consoleString = computed(() => consoleCommands.value.join('\n'))
     return { consoleString }

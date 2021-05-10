@@ -130,7 +130,7 @@ export default {
       consoleStore.addCommand('game saved to localstorage')
     }
     const makeLoad = () => {
-      setField(JSON.parse(localStorage.getItem('gameField')).value)
+      setField(JSON.parse(localStorage.getItem('gameField') as string).value)
       consoleStore.addCommand('game loaded from localstorage')
     }
     provide('robotStore', robotStore)
